@@ -1,21 +1,23 @@
 
 # Introduction
 
-This is a proposal for a method to define linear and nonlinear narrative "trails" using the [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/)
-The goal is to permit a "Memex-like" application where users store bookmarks in a local database which provides a searchable index allowing entries to be combined into collections, which in turn can be referenced in each "step" of a greater narrative "trail".
-It makes use of 'meta-annotations' (annotations describing annotations) to create the proposed structures.
+This is a proposal for a method to define linear and nonlinear narrative 'trails' using the [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/).
+The goal is to permit a 'Memex-like' application where users 'bookmark' content in a local database which provides a searchable index and UI allowing entries to be combined into 'collections', which in turn can be referenced in each 'step' of a greater narrative 'trail'.
+It makes use of 'meta-annotations' (annotations targeting annotations) to create the proposed structures.
 
 <img src="Trails.jpg">
 
 This example defines: 
 
-- Three **entry** objects describing .mp4, .jpg, and .txt files defined as annotations with the `describing` or `bookmarking` motivation. Bookmarks do not require a `body`.
+- Three **entry** objects describing .mp4, .jpg, and .txt files defined as annotations with the `describing` or `bookmarking` motivation.
 
-- Four **collection**s defined as annotations with a `linking` motivation, each targeting a List (ordered) or Composite (unordered) of **entry** objects. There is no `body` in the same way bookmarks no not require one. 
+- Four **collection**s defined as annotations with a `linking` motivation, each targeting a List (ordered) or Composite (unordered) of **entry** objects.
 
 - One **trail** defined as an annotation with a `linking` motivation, targeting a List of **step**s. 
 
 - Four **step**s defined as annotations with a `linking` motivation, linking a **collection** to one or more **step**s.
+
+Note that a `body` property is [not required by the Web Annotation Data Model](https://www.w3.org/TR/annotation-model/#cardinality-of-bodies-and-targets). Collections and Trails make use of this fact.
 
 A client application would display this media using whatever layout/navigation strategy it sees fit - perhaps a custom `mx:layoutStrategy` property could be used?
 
