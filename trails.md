@@ -24,9 +24,9 @@ This example defines:
 
 Note that a `body` property is [not required by the Web Annotation Data Model](https://www.w3.org/TR/annotation-model/#cardinality-of-bodies-and-targets). Collections and Trails make use of this fact.
 
-A client application would display this media using whatever layout/navigation strategy it sees fit - perhaps a custom `mx:layoutStrategy` property could be used?
+An `mx` namespace is  included via the `http://example.org/vocab/memex.jsonld` `@context`. This provides `mx:type` which can be used to index memex records (entries, collections, trails, steps) by type.
 
-I propose an additional `mx` namespace via the `fs:/ipfs/QmContent/vocab/memex.jsonld` `@context`. This gives us `mx:type` which can be used to index memex records (entries, collections, trails, steps) by type.
+A client application would display these structures using whatever layout/navigation strategy it sees fit - perhaps a custom `mx:layoutStrategy` property could be used?
 
 # Entries
 
