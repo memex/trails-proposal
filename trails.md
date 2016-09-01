@@ -1,15 +1,19 @@
 
-Here we have: 
+<img src="Trails.jpg">
 
-- Three **entry** objects describing .mp4, .jpg, and .txt files defined as annotations with the `describing` motivation or `bookmarking` motivation, in which case a `body` is not required.
+This example defines: 
 
-- Two **collection**s defined as annotations with a `linking` motivation, each targeting a List (ordered) or Composite (unordered) set of **entry** objects.
+- Three **entry** objects describing .mp4, .jpg, and .txt files defined as annotations with the `describing` or `bookmarking` motivation. Bookmarks do not require a `body`.
 
-- One **trail** defined as an annotation with a `linking` motivation, targeting a set of **step**s. 
+- Four **collection**s defined as annotations with a `linking` motivation, each targeting a List (ordered) or Composite (unordered) of **entry** objects. There is no `body` in the same way bookmarks no not require one. 
 
-- Two **step**s defined as annotations with a `linking` motivation, linking a **collection** to one or more **collection**s.
+- One **trail** defined as an annotation with a `linking` motivation, targeting a List of **step**s. 
 
-A client application would display this media using whatever layout strategy it sees fit - perhaps a custom `mx:layoutStrategy` property could be used?
+- Four **step**s defined as annotations with a `linking` motivation, linking a **collection** to one or more **step**s.
+
+A client application would display this media using whatever layout/navigation strategy it sees fit - perhaps a custom `mx:layoutStrategy` property could be used?
+
+I propose an additional `mx` namespace via the `fs:/ipfs/QmContent/vocab/memex.jsonld` `@context`. This gives us `mx:type` which can be used to index memex records (entries, collections, trails, steps) by type.
 
 # Entries
 
@@ -23,19 +27,13 @@ fs:/ipfs/QmContent/entry1
   "mx:type": "entry",
   "motivation": "describing", // or bookmarking (body not required)
   "body": {
-    "type": "Choice",
+    "type": "Choice", // allow multiple languages
     "items": [
       {
           "type": "TextualBody",
           "value": "Awesome movie",
           "format": "text/html",
           "language" : "en"
-      },
-      {
-          "type": "TextualBody",
-          "value": "děsivý film",
-          "format": "text/html",
-          "language" : "cs"
       },
       {
           "type": "TextualBody",
@@ -59,19 +57,13 @@ fs:/ipfs/QmContent/entry2
   "mx:type": "entry",
   "motivation": "describing", // or bookmarking (body not required)
   "body": {
-    "type": "Choice",
+    "type": "Choice", // allow multiple languages
     "items": [
       {
           "type": "TextualBody",
           "value": "Awesome movie",
           "format": "text/html",
           "language" : "en"
-      },
-      {
-          "type": "TextualBody",
-          "value": "děsivý obrázek",
-          "format": "text/html",
-          "language" : "cs"
       },
       {
           "type": "TextualBody",
@@ -95,19 +87,13 @@ fs:/ipfs/QmContent/entry3
   "mx:type": "entry",
   "motivation": "describing", // or bookmarking (body not required)
   "body": {
-    "type": "Choice",
+    "type": "Choice", // allow multiple languages
     "items": [
       {
           "type": "TextualBody",
           "value": "Awesome text",
           "format": "text/html",
           "language" : "en"
-      },
-      {
-          "type": "TextualBody",
-          "value": "děsivý textu",
-          "format": "text/html",
-          "language" : "cs"
       },
       {
           "type": "TextualBody",
@@ -133,7 +119,7 @@ fs:/ipfs/QmContent/collection1
   "mx:type": "collection",
   "motivation": "linking",
   "dc:title": "Collection 1",
-  "dc:description": "I link the targeted media as collection1",
+  "dc:description": "I link the targeted entries to collection1",
   "target": {
     "type": "List", // show the items in this order
     "items": [
@@ -155,13 +141,57 @@ fs:/ipfs/QmContent/collection2
   "mx:type": "collection",
   "motivation": "linking",
   "dc:title": "Collection 2",
-  "dc:description": "I link the targeted media as collection2",
+  "dc:description": "I link the targeted entries to collection2",
   "target": {
     "type": "Composite", // show the items in any order
     "items": [
-      "fs:/ipfs/QmContent/collection2/entry4,
-      "fs:/ipfs/QmContent/collection2/entry5",
-      "fs:/ipfs/QmContent/collection2/entry6"
+      "fs:/ipfs/QmContent/collection2/entry1,
+      "fs:/ipfs/QmContent/collection2/entry2",
+      "fs:/ipfs/QmContent/collection2/entry3"
+    ]
+  }
+}
+```
+
+## Collection 3
+fs:/ipfs/QmContent/collection3
+
+```
+{
+  "@context": ["http://www.w3.org/ns/anno.jsonld", "fs:/ipfs/QmContent/vocab/memex.jsonld"],
+  "type": "Annotation",
+  "mx:type": "collection",
+  "motivation": "linking",
+  "dc:title": "Collection 3",
+  "dc:description": "I link the targeted entries to collection3",
+  "target": {
+    "type": "Composite", // show the items in any order
+    "items": [
+      "fs:/ipfs/QmContent/collection3/entry1,
+      "fs:/ipfs/QmContent/collection3/entry2",
+      "fs:/ipfs/QmContent/collection3/entry3"
+    ]
+  }
+}
+```
+
+## Collection 4
+fs:/ipfs/QmContent/collection4
+
+```
+{
+  "@context": ["http://www.w3.org/ns/anno.jsonld", "fs:/ipfs/QmContent/vocab/memex.jsonld"],
+  "type": "Annotation",
+  "mx:type": "collection",
+  "motivation": "linking",
+  "dc:title": "Collection 4",
+  "dc:description": "I link the targeted entries to collection4",
+  "target": {
+    "type": "Composite", // show the items in any order
+    "items": [
+      "fs:/ipfs/QmContent/collection4/entry1,
+      "fs:/ipfs/QmContent/collection4/entry2",
+      "fs:/ipfs/QmContent/collection4/entry3"
     ]
   }
 }
@@ -179,12 +209,14 @@ fs:/ipfs/QmContent/trail1
   "mx:type": "trail",
   "motivation": "linking",
   "dc:title": "Trail 1",
-  "dc:description": "I link the targeted steps as trail1",
+  "dc:description": "I link the targeted steps to trail1",
   "target": {
     "type": "List", // specific order
     "items": [
       "fs:/ipfs/QmContent/step1",
-      "fs:/ipfs/QmContent/step2"
+      "fs:/ipfs/QmContent/step2",
+      "fs:/ipfs/QmContent/step3",
+      "fs:/ipfs/QmContent/step4"
     ]
   }
 }
@@ -201,7 +233,8 @@ fs:/ipfs/QmContent/step1
   "type": "Annotation",
   "mx:type": "step",
   "motivation": "linking",
-  "dc:description": "I'm the first part of a trail linking collection1 to step2",
+  "dc:title": "Step 1",
+  "dc:description": "I'm the first part of trail1 linking collection 1 to step2",
   "body": "fs:/ipfs/QmContent/collection1",
   "target": "fs:/ipfs/QmContent/step2" // linear
 }
@@ -216,14 +249,47 @@ fs:/ipfs/QmContent/step2
   "type": "Annotation",
   "mx:type": "step",
   "motivation": "linking",
-  "dc:description": "I'm the second part of a trail linking collection2 to collection3 and collection4",
+  "dc:title": "Step 2",
+  "dc:description": "I'm the second part of trail1 linking collection2 to step3 and step4",
   "body": "fs:/ipfs/QmContent/collection2",
   "target": {
     "type": "Composite", // no specific order - nonlinear
     "items": [
-      "fs:/ipfs/QmContent/collection3",
-      "fs:/ipfs/QmContent/collection4"
+      "fs:/ipfs/QmContent/step3",
+      "fs:/ipfs/QmContent/step4"
     ]
   }
+}
+```
+
+## Step 3
+fs:/ipfs/QmContent/step3
+
+```
+{
+  "@context": ["http://www.w3.org/ns/anno.jsonld", "fs:/ipfs/QmContent/vocab/memex.jsonld"],
+  "type": "Annotation",
+  "mx:type": "step",
+  "motivation": "linking",
+  "dc:title": "Step 3",
+  "dc:description": "I'm the third part of trail1 linking collection3 to ...",
+  "body": "fs:/ipfs/QmContent/collection3",
+  "target": ...
+}
+```
+
+## Step 2
+fs:/ipfs/QmContent/step4
+
+```
+{
+  "@context": ["http://www.w3.org/ns/anno.jsonld", "fs:/ipfs/QmContent/vocab/memex.jsonld"],
+  "type": "Annotation",
+  "mx:type": "step",
+  "motivation": "linking",
+  "dc:title": "Step 4",
+  "dc:description": "I'm the fourth part of trail1 linking collection4 to ...",
+  "body": "fs:/ipfs/QmContent/collection4",
+  "target": ...
 }
 ```
