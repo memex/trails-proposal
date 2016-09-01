@@ -31,7 +31,7 @@ I propose an additional `mx` namespace via the `fs:/ipfs/QmContent/vocab/memex.j
 # Entries
 
 ## Entry 1
-ttp://example.org/entry1
+http://example.org/entry1
 
 ```
 {
