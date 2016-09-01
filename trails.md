@@ -5,6 +5,11 @@ This is a proposal for a method to define linear and nonlinear narrative 'trails
 The goal is to permit a 'Memex-like' application where users 'bookmark' content in a local database which provides a searchable index and UI allowing entries to be combined into 'collections', which in turn can be referenced in each 'step' of a greater narrative 'trail'. The elements of this model should be sufficiently decoupled as to allow remixing entries and collections into other narrative trails.
 The model makes use of 'meta-annotations' (annotations targeting annotations) to create the proposed structures.
 
+## IPFS
+It is possible to store these JSON-LD annotations in IPFS/IPLD. To do so, the `id` property must be excluded as per [this discussion](https://github.com/ipfs/notes/issues/152#issuecomment-239153915).
+Content IRIs starting with `http://examples.org/` can be replaced with a `fs:/ipfs/QmContent/` IRI, thus adhering to the Web Annotation Data Model.
+A consuming client application can interpret these IRIs as necessary. 
+
 <img src="Trails.jpg">
 
 This example defines: 
@@ -30,7 +35,8 @@ fs:/ipfs/QmContent/entry1
 
 ```
 {
-  "@context": ["http://www.w3.org/ns/anno.jsonld", "fs:/ipfs/QmContent/vocab/memex.jsonld"],
+  "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
+  "id": "http://example.org/entry1",
   "type": "Annotation",
   "mx:type": "entry",
   "motivation": "describing", // or bookmarking (body not required)
@@ -51,16 +57,17 @@ fs:/ipfs/QmContent/entry1
       }
     ]
   },
-  "target": "fs:/ipfs/QmContent/movie.mp4"
+  "target": "http://example.org/movie.mp4"
 }
 ```
 
 ## Entry 2
-fs:/ipfs/QmContent/entry2
+http://example.org/entry2
 
 ```
 {
-  "@context": ["http://www.w3.org/ns/anno.jsonld", "fs:/ipfs/QmContent/vocab/memex.jsonld"],
+  "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
+  "id": "http://example.org/entry2",
   "type": "Annotation",
   "mx:type": "entry",
   "motivation": "describing", // or bookmarking (body not required)
@@ -81,16 +88,17 @@ fs:/ipfs/QmContent/entry2
       }
     ]
   },
-  "target": "fs:/ipfs/QmContent/image.jpg"
+  "target": "http://example.org/image.jpg"
 }
 ```
 
 ## Entry 3
-fs:/ipfs/QmContent/entry3
+http://example.org/entry3
 
 ```
 {
-  "@context": ["http://www.w3.org/ns/anno.jsonld", "fs:/ipfs/QmContent/vocab/memex.jsonld"],
+  "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
+  "id": "http://example.org/entry3",
   "type": "Annotation",
   "mx:type": "entry",
   "motivation": "describing", // or bookmarking (body not required)
@@ -111,18 +119,19 @@ fs:/ipfs/QmContent/entry3
       }
     ]
   },
-  "target": "fs:/ipfs/QmContent/text.txt"
+  "target": "http://example.org/text.txt"
 }
 ```
 
 # Collections
 
 ## Collection 1
-fs:/ipfs/QmContent/collection1
+http://example.org/collection1
 
 ```
 {
-  "@context": ["http://www.w3.org/ns/anno.jsonld", "fs:/ipfs/QmContent/vocab/memex.jsonld"],
+  "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
+  "id": "http://example.org/collection1",
   "type": "Annotation",
   "mx:type": "collection",
   "motivation": "linking",
@@ -131,20 +140,21 @@ fs:/ipfs/QmContent/collection1
   "target": {
     "type": "List", // show the items in this order
     "items": [
-      "fs:/ipfs/QmContent/collection1/entry1",
-      "fs:/ipfs/QmContent/collection1/entry2",
-      "fs:/ipfs/QmContent/collection1/entry3"
+      "http://example.org/collection1/entry1",
+      "http://example.org/collection1/entry2",
+      "http://example.org/collection1/entry3"
     ]
   }
 }
 ```
 
 ## Collection 2
-fs:/ipfs/QmContent/collection2
+http://example.org/collection2
 
 ```
 {
-  "@context": ["http://www.w3.org/ns/anno.jsonld", "fs:/ipfs/QmContent/vocab/memex.jsonld"],
+  "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
+  "id": "http://example.org/collection2",
   "type": "Annotation",
   "mx:type": "collection",
   "motivation": "linking",
@@ -153,20 +163,21 @@ fs:/ipfs/QmContent/collection2
   "target": {
     "type": "Composite", // show the items in any order
     "items": [
-      "fs:/ipfs/QmContent/collection2/entry1,
-      "fs:/ipfs/QmContent/collection2/entry2",
-      "fs:/ipfs/QmContent/collection2/entry3"
+      "http://example.org/collection2/entry1,
+      "http://example.org/collection2/entry2",
+      "http://example.org/collection2/entry3"
     ]
   }
 }
 ```
 
 ## Collection 3
-fs:/ipfs/QmContent/collection3
+http://example.org/collection3
 
 ```
 {
-  "@context": ["http://www.w3.org/ns/anno.jsonld", "fs:/ipfs/QmContent/vocab/memex.jsonld"],
+  "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
+  "id": "http://example.org/collection3",
   "type": "Annotation",
   "mx:type": "collection",
   "motivation": "linking",
@@ -175,20 +186,21 @@ fs:/ipfs/QmContent/collection3
   "target": {
     "type": "Composite", // show the items in any order
     "items": [
-      "fs:/ipfs/QmContent/collection3/entry1,
-      "fs:/ipfs/QmContent/collection3/entry2",
-      "fs:/ipfs/QmContent/collection3/entry3"
+      "http://example.org/collection3/entry1,
+      "http://example.org/collection3/entry2",
+      "http://example.org/collection3/entry3"
     ]
   }
 }
 ```
 
 ## Collection 4
-fs:/ipfs/QmContent/collection4
+http://example.org/collection4
 
 ```
 {
-  "@context": ["http://www.w3.org/ns/anno.jsonld", "fs:/ipfs/QmContent/vocab/memex.jsonld"],
+  "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
+  "id": "http://example.org/collection4",
   "type": "Annotation",
   "mx:type": "collection",
   "motivation": "linking",
@@ -197,9 +209,9 @@ fs:/ipfs/QmContent/collection4
   "target": {
     "type": "Composite", // show the items in any order
     "items": [
-      "fs:/ipfs/QmContent/collection4/entry1,
-      "fs:/ipfs/QmContent/collection4/entry2",
-      "fs:/ipfs/QmContent/collection4/entry3"
+      "http://example.org/collection4/entry1,
+      "http://example.org/collection4/entry2",
+      "http://example.org/collection4/entry3"
     ]
   }
 }
@@ -208,11 +220,12 @@ fs:/ipfs/QmContent/collection4
 # Trails
 
 ## Trail 1
-fs:/ipfs/QmContent/trail1
+http://example.org/trail1
 
 ```
 {
-  "@context": ["http://www.w3.org/ns/anno.jsonld", "fs:/ipfs/QmContent/vocab/memex.jsonld"],
+  "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
+  "id": "http://example.org/trail1",
   "type": "Annotation",
   "mx:type": "trail",
   "motivation": "linking",
@@ -221,10 +234,10 @@ fs:/ipfs/QmContent/trail1
   "target": {
     "type": "List", // specific order
     "items": [
-      "fs:/ipfs/QmContent/step1",
-      "fs:/ipfs/QmContent/step2",
-      "fs:/ipfs/QmContent/step3",
-      "fs:/ipfs/QmContent/step4"
+      "http://example.org/step1",
+      "http://example.org/step2",
+      "http://example.org/step3",
+      "http://example.org/step4"
     ]
   }
 }
@@ -233,71 +246,75 @@ fs:/ipfs/QmContent/trail1
 # Steps
 
 ## Step 1
-fs:/ipfs/QmContent/step1
+http://example.org/step1
 
 ```
 {
-  "@context": ["http://www.w3.org/ns/anno.jsonld", "fs:/ipfs/QmContent/vocab/memex.jsonld"],
+  "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
+  "id": "http://example.org/step1",
   "type": "Annotation",
   "mx:type": "step",
   "motivation": "linking",
   "dc:title": "Step 1",
   "dc:description": "I'm the first part of trail1 linking collection 1 to step2",
-  "body": "fs:/ipfs/QmContent/collection1",
-  "target": "fs:/ipfs/QmContent/step2" // linear
+  "body": "http://example.org/collection1",
+  "target": "http://example.org/step2" // linear
 }
 ```
 
 ## Step 2
-fs:/ipfs/QmContent/step2
+http://example.org/step2
 
 ```
 {
-  "@context": ["http://www.w3.org/ns/anno.jsonld", "fs:/ipfs/QmContent/vocab/memex.jsonld"],
+  "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
+  "id": "http://example.org/step2",
   "type": "Annotation",
   "mx:type": "step",
   "motivation": "linking",
   "dc:title": "Step 2",
   "dc:description": "I'm the second part of trail1 linking collection2 to step3 and step4",
-  "body": "fs:/ipfs/QmContent/collection2",
+  "body": "http://example.org/collection2",
   "target": {
     "type": "Composite", // no specific order - nonlinear
     "items": [
-      "fs:/ipfs/QmContent/step3",
-      "fs:/ipfs/QmContent/step4"
+      "http://example.org/step3",
+      "http://example.org/step4"
     ]
   }
 }
 ```
 
 ## Step 3
-fs:/ipfs/QmContent/step3
+http://example.org/step3
 
 ```
 {
-  "@context": ["http://www.w3.org/ns/anno.jsonld", "fs:/ipfs/QmContent/vocab/memex.jsonld"],
+  "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
+  "id": "http://example.org/step3",
   "type": "Annotation",
   "mx:type": "step",
   "motivation": "linking",
   "dc:title": "Step 3",
   "dc:description": "I'm the third part of trail1 linking collection3 to ...",
-  "body": "fs:/ipfs/QmContent/collection3",
+  "body": "http://example.org/collection3",
   "target": ...
 }
 ```
 
-## Step 2
-fs:/ipfs/QmContent/step4
+## Step 4
+http://example.org/step4
 
 ```
 {
-  "@context": ["http://www.w3.org/ns/anno.jsonld", "fs:/ipfs/QmContent/vocab/memex.jsonld"],
+  "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
+  "id": "http://example.org/step4",
   "type": "Annotation",
   "mx:type": "step",
   "motivation": "linking",
   "dc:title": "Step 4",
   "dc:description": "I'm the fourth part of trail1 linking collection4 to ...",
-  "body": "fs:/ipfs/QmContent/collection4",
+  "body": "http://example.org/collection4",
   "target": ...
 }
 ```
