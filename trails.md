@@ -140,9 +140,9 @@ http://example.org/collection1
   "target": {
     "type": "List", // show the items in this order
     "items": [
-      "http://example.org/collection1/entry1",
-      "http://example.org/collection1/entry2",
-      "http://example.org/collection1/entry3"
+      "http://example.org/entry1",
+      "http://example.org/entry2",
+      "http://example.org/entry3"
     ]
   }
 }
@@ -163,9 +163,9 @@ http://example.org/collection2
   "target": {
     "type": "Composite", // show the items in any order
     "items": [
-      "http://example.org/collection2/entry1,
-      "http://example.org/collection2/entry2",
-      "http://example.org/collection2/entry3"
+      "http://example.org/entry4,
+      "http://example.org/entry5",
+      "http://example.org/entry6"
     ]
   }
 }
@@ -186,9 +186,9 @@ http://example.org/collection3
   "target": {
     "type": "Composite", // show the items in any order
     "items": [
-      "http://example.org/collection3/entry1,
-      "http://example.org/collection3/entry2",
-      "http://example.org/collection3/entry3"
+      "http://example.org/entry7,
+      "http://example.org/entry8",
+      "http://example.org/entry9"
     ]
   }
 }
@@ -209,9 +209,9 @@ http://example.org/collection4
   "target": {
     "type": "Composite", // show the items in any order
     "items": [
-      "http://example.org/collection4/entry1,
-      "http://example.org/collection4/entry2",
-      "http://example.org/collection4/entry3"
+      "http://example.org/entry10,
+      "http://example.org/entry11",
+      "http://example.org/entry12"
     ]
   }
 }
