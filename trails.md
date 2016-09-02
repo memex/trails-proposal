@@ -10,9 +10,8 @@ It is possible to store these JSON-LD annotations in IPFS/IPLD. To do so, the `i
 Content IRIs starting with `http://example.org/` can be replaced with a `fs:/ipfs/QmContent/` IRI, thus adhering to the Web Annotation Data Model.
 A consuming client application can interpret these IRIs as necessary. 
 
-<img src="Trails.jpg">
-
-Elements contained within a dotted outline are targets of the parent element.
+![](Trails.jpg)
+*Elements contained within a dotted outline are targets of the parent element.*
 
 This example defines: 
 
