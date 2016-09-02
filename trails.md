@@ -14,7 +14,7 @@ A consuming client application can interpret these IRIs as necessary.
 
 This example defines: 
 
-- Three **entry** objects describing .mp4, .jpg, and .txt files defined as annotations with the `describing` or `bookmarking` motivation.
+- Three **entry** objects describing [fragments](https://www.w3.org/TR/annotation-model/#fragment-selector) of .mp4, .jpg, and .txt files defined as annotations with the `describing` or `bookmarking` motivation. It is no required to use a fragment selector, the whole file could equally be referenced, this example just shows that it is possible.
 
 - Four **collection**s defined as annotations with a `linking` motivation, each targeting a List (ordered) or Composite (unordered) of **entry** objects.
 
@@ -57,7 +57,7 @@ http://example.org/entry1
       }
     ]
   },
-  "target": "http://example.org/movie.mp4"
+  "target": "http://example.org/movie.mp4#t=30,60"
 }
 ```
 
@@ -76,7 +76,7 @@ http://example.org/entry2
     "items": [
       {
           "type": "TextualBody",
-          "value": "Awesome movie",
+          "value": "Awesome image",
           "format": "text/html",
           "language" : "en"
       },
@@ -88,7 +88,7 @@ http://example.org/entry2
       }
     ]
   },
-  "target": "http://example.org/image.jpg"
+  "target": "http://example.org/image.jpg#xywh=100,100,300,300"
 }
 ```
 
@@ -119,7 +119,7 @@ http://example.org/entry3
       }
     ]
   },
-  "target": "http://example.org/text.txt"
+  "target": "http://example.org/text.txt#char=0,10"
 }
 ```
 
