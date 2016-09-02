@@ -12,6 +12,8 @@ A consuming client application can interpret these IRIs as necessary.
 
 <img src="Trails.jpg">
 
+Elements contained within a dotted outline are targets of the parent element.
+
 This example defines: 
 
 - Three **entry** objects describing [fragments](https://www.w3.org/TR/annotation-model/#fragment-selector) of .mp4, .jpg, and .txt files defined as annotations with the `describing` or `bookmarking` motivation. It is no required to use a fragment selector, the whole file could equally be referenced, this example just shows that it is possible.
