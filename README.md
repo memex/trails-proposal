@@ -56,13 +56,13 @@ http://example.org/entry1
     "items": [
       {
           "type": "TextualBody",
-          "value": "Awesome movie",
+          "value": "Awesome scene",
           "format": "text/html",
           "language" : "en"
       },
       {
           "type": "TextualBody",
-          "value": "Toller Film",
+          "value": "Fantastische Szene",
           "format": "text/html",
           "language" : "de"
       }
@@ -87,13 +87,13 @@ http://example.org/entry2
     "items": [
       {
           "type": "TextualBody",
-          "value": "Awesome image",
+          "value": "Awesome region",
           "format": "text/html",
           "language" : "en"
       },
       {
           "type": "TextualBody",
-          "value": "Super Bild",
+          "value": "ehrfürchtig Region",
           "format": "text/html",
           "language" : "de"
       }
@@ -118,19 +118,19 @@ http://example.org/entry3
     "items": [
       {
           "type": "TextualBody",
-          "value": "Awesome text",
+          "value": "Awesome passage",
           "format": "text/html",
           "language" : "en"
       },
       {
           "type": "TextualBody",
-          "value": "ehrfürchtig Text",
+          "value": "ehrfürchtig Passage",
           "format": "text/html",
           "language" : "de"
       }
     ]
   },
-  "target": "http://example.org/text.txt#char=0,10"
+  "target": "http://example.org/text.txt#char=0,100"
 }
 ```
 
