@@ -12,7 +12,7 @@ The model makes use of 'meta-annotations' (annotations targeting annotations) to
 
 This example (JSON-LD below) defines: 
 
-- Three **entry** objects describing [fragments](https://www.w3.org/TR/annotation-model/#fragment-selector) of .mp4, .jpg, and .txt files defined as annotations with the `describing` or `bookmarking` motivation. It is not required to use a fragment selector, the whole file could also be referenced, this example just shows that it is possible.
+- Three **entry** objects describing [fragments](https://www.w3.org/TR/annotation-model/#fragment-selector) of .mp4, .jpg, and .txt files defined as annotations with the `describing` or `bookmarking` motivation. It is not required to use a fragment selector, the whole file could also be referenced, this example just shows that it is possible. There are 12 entries in total, but for the sake of keeping the JSON-LD examples concise only 3 are described. 
 
 - Four **collection**s defined as annotations with a `linking` motivation, each targeting a List (ordered) or Composite (unordered) of 1 or more **entry** objects.
 
