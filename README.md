@@ -5,11 +5,6 @@ This is a proposal for a method to define linear and nonlinear narrative 'trails
 The goal is to permit a 'Memex-like' application where users 'bookmark' content in a local database which provides a searchable index and UI allowing entries to be combined into 'collections', which in turn can be referenced in each 'step' of a greater narrative 'trail'. The elements of this model should be sufficiently decoupled as to allow remixing entries and collections into other narrative trails.
 The model makes use of 'meta-annotations' (annotations targeting annotations) to create the proposed structures.
 
-## IPFS
-It is possible to store these JSON-LD annotations in IPFS/IPLD. To do so, the `id` property must be excluded as per [this discussion](https://github.com/ipfs/notes/issues/152#issuecomment-239153915).
-Content IRIs starting with `http://example.org/` can be replaced with a `fs:/ipfs/QmContent/` IRI, thus adhering to the Web Annotation Data Model.
-A consuming client application can interpret these IRIs as necessary. 
-
 ## Example
 
 ![](Trails.jpg)
@@ -36,6 +31,11 @@ One example of a layout strategy might be to show each step in a trail as a slid
 
 - Would a `mx:layoutStrategy` property be useful to give consuming clients a hint as to how to best present a trail?
 - What is the correct syntax for a `dc:description` with multiple languages?
+
+## IPFS
+It is possible to store these JSON-LD annotations in IPFS/IPLD. To do so, the `id` property must be excluded as per [this discussion](https://github.com/ipfs/notes/issues/152#issuecomment-239153915).
+Content IRIs starting with `http://example.org/` can be replaced with a `fs:/ipfs/QmContent/` IRI, thus adhering to the Web Annotation Data Model.
+A consuming client application can interpret these IRIs as necessary. 
 
 # Entries
 
