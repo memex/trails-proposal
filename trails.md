@@ -10,24 +10,32 @@ It is possible to store these JSON-LD annotations in IPFS/IPLD. To do so, the `i
 Content IRIs starting with `http://example.org/` can be replaced with a `fs:/ipfs/QmContent/` IRI, thus adhering to the Web Annotation Data Model.
 A consuming client application can interpret these IRIs as necessary. 
 
+## Example
+
 ![](Trails.jpg)
-*Elements contained within a dotted outline are targets of the parent element.*
+*Elements contained within a dotted element outline are targets of the containing element.*
 
-This example defines: 
+This example (JSON-LD below) defines: 
 
-- Three **entry** objects describing [fragments](https://www.w3.org/TR/annotation-model/#fragment-selector) of .mp4, .jpg, and .txt files defined as annotations with the `describing` or `bookmarking` motivation. It is no required to use a fragment selector, the whole file could equally be referenced, this example just shows that it is possible.
+- Three **entry** objects describing [fragments](https://www.w3.org/TR/annotation-model/#fragment-selector) of .mp4, .jpg, and .txt files defined as annotations with the `describing` or `bookmarking` motivation. It is not required to use a fragment selector, the whole file could also be referenced, this example just shows that it is possible.
 
-- Four **collection**s defined as annotations with a `linking` motivation, each targeting a List (ordered) or Composite (unordered) of **entry** objects.
+- Four **collection**s defined as annotations with a `linking` motivation, each targeting a List (ordered) or Composite (unordered) of one or more **entry** objects.
 
 - One **trail** defined as an annotation with a `linking` motivation, targeting a List of **step**s. 
 
-- Four **step**s defined as annotations with a `linking` motivation, linking a **collection** to one or more **step**s.
+- Four **step**s defined as annotations with a `linking` motivation, linking a **collection** to 0 or more **step**s.
 
 Note that a `body` property is [not required by the Web Annotation Data Model](https://www.w3.org/TR/annotation-model/#cardinality-of-bodies-and-targets). Collections and Trails make use of this fact.
 
-An `mx` namespace is  included via the `http://example.org/vocab/memex.jsonld` `@context`. This provides `mx:type` which can be used to index memex records (entries, collections, trails, steps) by type.
+An `mx` namespace is  included via the `http://example.org/vocab/memex.jsonld` `@context`. This provides `mx:type` string which can be used to index memex records (entries, collections, trails, steps) by type.
 
-A client application would display these structures using whatever layout/navigation strategy it sees fit - perhaps a custom `mx:layoutStrategy` property could be used?
+A client application would display these linked elements using whatever layout/navigation strategy it sees fit.
+One example of a layout strategy might be to show each step in a trail as a slide in a slide presentation. The contents of each slide would be the dereferenced from the collection specified in the step's `body`. Collections serve as a means to show one or more entries per narrative step. Each step targets 0 or more steps. These might be used to provide navigation to the next slide or slides in the case of a nonlinear/branching presentation.
+
+## Open Questions
+
+- Would a `mx:layoutStrategy` property be useful to give consuming clients a hint as to how to best present a trail?
+- What is the correct syntax for a `dc:description` with multiple languages?
 
 # Entries
 
@@ -297,9 +305,8 @@ http://example.org/step3
   "mx:type": "step",
   "motivation": "linking",
   "dc:title": "Step 3",
-  "dc:description": "I'm the third part of trail1 linking collection3 to ...",
-  "body": "http://example.org/collection3",
-  "target": ...
+  "dc:description": "I'm the third part of trail1 linking collection3 to no further steps",
+  "body": "http://example.org/collection3"
 }
 ```
 
@@ -314,8 +321,7 @@ http://example.org/step4
   "mx:type": "step",
   "motivation": "linking",
   "dc:title": "Step 4",
-  "dc:description": "I'm the fourth part of trail1 linking collection4 to ...",
-  "body": "http://example.org/collection4",
-  "target": ...
+  "dc:description": "I'm the fourth part of trail1 linking collection4 to no further steps",
+  "body": "http://example.org/collection4"
 }
 ```
