@@ -25,14 +25,14 @@ Note that a `body` property is [not required by the Web Annotation Data Model](h
 An `mx` namespace is  included via the `@context` '`http://example.org/vocab/memex.jsonld`'. This provides an `mx:type` string which could be used to index memex records (entries, collections, trails, steps) by type.
 
 A client application would display these linked elements using whatever layout/navigation strategy it sees fit.
-One example of a layout strategy might be to show each step in a trail as a slide in a slide presentation. The contents of each slide would be the dereferenced from the collection specified in the step's `body`. Collections serve as a means to show one or more entries per narrative step. Each step targets 0 or more subsequent steps. These might be used to provide navigation to the next slide, or slides in the case of a nonlinear/branching presentation.
+One example of a layout strategy might be to show each step in a trail as a slide in a slide presentation. The contents of each slide would be dereferenced from the collection specified in the step's `body`. Collections serve as a means to show one or more entries per narrative step. Each step targets 0 or more subsequent steps. These might be used to provide navigation to the next slide, or slides in the case of a nonlinear/branching presentation.
 
 ## IPFS
 It is possible to store these JSON-LD annotations in IPFS/IPLD. To do so, the `id` property must be excluded as per [this discussion](https://github.com/ipfs/notes/issues/152#issuecomment-239153915).
 Content IRIs starting with `http://example.org/` can be replaced with a `fs:/ipfs/QmContent/` IRI, thus adhering to the Web Annotation Data Model.
 A consuming client application can interpret these IRIs as necessary. 
 
-## Open Questions
+## Questions
 
 - Would an `mx:layoutStrategy` property be useful to give consuming clients a hint as to how to best present a trail?
 - What is the correct syntax for a `dc:description` with multiple languages?
