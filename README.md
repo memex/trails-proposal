@@ -2,7 +2,7 @@
 # Introduction
 
 This is a proposal for a method to define linear and nonlinear narrative 'trails' of content using the [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/).
-The goal is to permit a 'Memex-like' application where users 'bookmark' content in a local database which provides a searchable index and UI allowing entries to be combined into 'collections', which in turn can be referenced in each 'step' of a greater narrative 'trail'. The elements of this model should be sufficiently decoupled as to allow remixing entries and collections into other narrative trails.
+The goal is to permit a 'Memex-like' application where users 'bookmark' content in a local database which provides a searchable index and UI allowing entries to be combined into collections, which in turn can be referenced in each step of a greater narrative trail. The elements of this model should be sufficiently decoupled as to allow remixing entries and collections into other narrative trails.
 The model makes use of 'meta-annotations' (annotations targeting annotations) to create the proposed structures.
 
 ## Example
@@ -14,28 +14,30 @@ This example (JSON-LD below) defines:
 
 - Three **entry** objects describing [fragments](https://www.w3.org/TR/annotation-model/#fragment-selector) of .mp4, .jpg, and .txt files defined as annotations with the `describing` or `bookmarking` motivation. It is not required to use a fragment selector, the whole file could also be referenced, this example just shows that it is possible.
 
-- Four **collection**s defined as annotations with a `linking` motivation, each targeting a List (ordered) or Composite (unordered) of one or more **entry** objects.
+- Four **collection**s defined as annotations with a `linking` motivation, each targeting a List (ordered) or Composite (unordered) of 1 or more **entry** objects.
 
-- One **trail** defined as an annotation with a `linking` motivation, targeting a List of **step**s. 
+- One **trail** defined as an annotation with a `linking` motivation, targeting a List of 1 or more **step**s. 
 
-- Four **step**s defined as annotations with a `linking` motivation, linking a **collection** to 0 or more **step**s.
+- Four **step**s defined as annotations with a `linking` motivation, linking 1 **collection** to 0 or more **step**s.
 
 Note that a `body` property is [not required by the Web Annotation Data Model](https://www.w3.org/TR/annotation-model/#cardinality-of-bodies-and-targets). Collections and Trails make use of this fact.
 
-An `mx` namespace is  included via the `http://example.org/vocab/memex.jsonld` `@context`. This provides `mx:type` string which can be used to index memex records (entries, collections, trails, steps) by type.
+An `mx` namespace is  included via the `@context` '`http://example.org/vocab/memex.jsonld`'. This provides an `mx:type` string which could be used to index memex records (entries, collections, trails, steps) by type.
 
 A client application would display these linked elements using whatever layout/navigation strategy it sees fit.
-One example of a layout strategy might be to show each step in a trail as a slide in a slide presentation. The contents of each slide would be the dereferenced from the collection specified in the step's `body`. Collections serve as a means to show one or more entries per narrative step. Each step targets 0 or more steps. These might be used to provide navigation to the next slide or slides in the case of a nonlinear/branching presentation.
-
-## Open Questions
-
-- Would a `mx:layoutStrategy` property be useful to give consuming clients a hint as to how to best present a trail?
-- What is the correct syntax for a `dc:description` with multiple languages?
+One example of a layout strategy might be to show each step in a trail as a slide in a slide presentation. The contents of each slide would be the dereferenced from the collection specified in the step's `body`. Collections serve as a means to show one or more entries per narrative step. Each step targets 0 or more subsequent steps. These might be used to provide navigation to the next slide, or slides in the case of a nonlinear/branching presentation.
 
 ## IPFS
 It is possible to store these JSON-LD annotations in IPFS/IPLD. To do so, the `id` property must be excluded as per [this discussion](https://github.com/ipfs/notes/issues/152#issuecomment-239153915).
 Content IRIs starting with `http://example.org/` can be replaced with a `fs:/ipfs/QmContent/` IRI, thus adhering to the Web Annotation Data Model.
 A consuming client application can interpret these IRIs as necessary. 
+
+## Open Questions
+
+- Would an `mx:layoutStrategy` property be useful to give consuming clients a hint as to how to best present a trail?
+- What is the correct syntax for a `dc:description` with multiple languages?
+- When a `body` is not provided in the case of trails and collections, is it fair to say that the targeted annotations are _linked_ to the trail/collection?
+
 
 # Entries
 
