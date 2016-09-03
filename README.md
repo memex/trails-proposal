@@ -1,8 +1,8 @@
 
 # Introduction
 
-This is a proposal for a method to define linear and nonlinear narrative 'trails' of content using the [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/).
-The goal is to permit a 'Memex-like' application where users 'bookmark' content in a local database which provides a searchable index and UI allowing entries to be combined into collections, which in turn can be referenced in each step of a greater narrative trail. The elements of this model should be sufficiently decoupled as to allow remixing entries and collections into other narrative trails.
+This is a proposal for a method to define linear and nonlinear narrative 'Trails' of content using the [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/).
+The goal is to permit a 'Memex-like' application where users 'bookmark' content in a local database which provides a searchable index and UI allowing entries to be combined into Collections, which in turn can be referenced in each Step of a greater narrative Trail. The elements of this model should be sufficiently decoupled as to allow remixing Entries and Collections into other narrative Trails.
 The model makes use of 'meta-annotations' (annotations targeting annotations) to create the proposed structures.
 
 ## Example
@@ -12,20 +12,21 @@ The model makes use of 'meta-annotations' (annotations targeting annotations) to
 
 This example (JSON-LD below) defines: 
 
-- Three **entry** objects describing [fragments](https://www.w3.org/TR/annotation-model/#fragment-selector) of .mp4, .jpg, and .txt files defined as annotations with the `describing` or `bookmarking` motivation. It is not required to use a fragment selector, the whole file could also be referenced, this example just shows that it is possible. There are 12 entries in total, but for the sake of keeping the JSON-LD examples concise only 3 are described. 
+- Three **Entry** objects describing [fragments](https://www.w3.org/TR/annotation-model/#fragment-selector) of .mp4, .jpg, and .txt files defined as annotations with the `describing` or `bookmarking` motivation. It is not required to use a fragment selector, the whole file could also be referenced, this example just shows that it is possible. There are 12 Entries in total, but for the sake of keeping the JSON-LD examples concise only 3 are described. 
 
-- Four **collection**s defined as annotations with a `linking` motivation, each targeting a List (ordered) or Composite (unordered) of 1 or more **entry** objects.
+- Four **Collections** defined as annotations with a `linking` motivation, each targeting a List (ordered) or Composite (unordered) of 1 or more **Entry** objects.
 
-- One **trail** defined as an annotation with a `linking` motivation, targeting a List of 1 or more **step**s. 
+- One **Trail** defined as an annotation with a `linking` motivation, targeting a List of 1 or more **Steps**. 
 
-- Four **step**s defined as annotations with a `linking` motivation, linking 1 **collection** to 0 or more **step**s.
+- Four **Steps** defined as annotations with a `linking` motivation, linking 1 **Collection** to 0 or more **Steps**.
 
 Note that a `body` property is [not required by the Web Annotation Data Model](https://www.w3.org/TR/annotation-model/#cardinality-of-bodies-and-targets). Collections and Trails make use of this fact.
 
-An `mx` namespace is  included via the `@context` '`http://example.org/vocab/memex.jsonld`'. This provides an `mx:type` string which could be used to index memex records (entries, collections, trails, steps) by type.
+An `mx` namespace is  included via the `@context` '`http://example.org/vocab/memex.jsonld`'. This provides an `mx:type` string which could be used to index memex records (Entries, Collections, Trails, Steps) by type.
 
 A client application would display these linked elements using whatever layout/navigation strategy it sees fit.
-One example of a layout strategy might be to show each step in a trail as a slide in a slide presentation. The contents of each slide would be dereferenced from the collection specified in the step's `body`. Collections serve as a means to show one or more entries per narrative step. Each step targets 0 or more subsequent steps. These might be used to provide navigation to the next slide, or slides in the case of a nonlinear/branching presentation.
+One example of a layout strategy might be to show each Step in a Trail as a slide in a slide presentation. The contents of each slide would be dereferenced from the Collection specified in the Step's `body`. Collections serve as a means to show one or more Entries per narrative Step. Each Step targets 0 or more subsequent Steps. These might be used to provide navigation to the next slide, or slides in the case of a nonlinear/branching presentation.
+Collections and Steps can both make use of Lists or Composites to specify whether their respective targets should be displayed in a particular order.
 
 ## IPFS
 It is possible to store these JSON-LD annotations in IPFS/IPLD. To do so, the `id` property must be excluded as per [this discussion](https://github.com/ipfs/notes/issues/152#issuecomment-239153915).
@@ -34,9 +35,9 @@ A consuming client application can interpret these IRIs as necessary.
 
 ## Questions
 
-- Would an `mx:layoutStrategy` property be useful to give consuming clients a hint as to how to best present a trail?
+- Would an `mx:layoutStrategy` property be useful to give consuming clients a hint as to how to best present a Trail?
 - What is the correct syntax for a `dc:description` with multiple languages?
-- When a `body` is not provided in the case of trails and collections, is it fair to say that the targeted annotations are _linked_ to the trail/collection?
+- When a `body` is not provided in the case of Trails and Collections, is it correct to say that the targeted annotations are _linked_ to the Trail/Collection?
 
 
 # Entries
