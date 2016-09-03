@@ -2,7 +2,7 @@
 # Introduction
 
 This is a proposal for a method to define linear and nonlinear narrative 'Trails' of content using the [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/).
-The goal is to permit a 'Memex-like' application where users 'bookmark' content in a local database which provides a searchable index and UI allowing entries to be combined into Collections, which in turn can be referenced in each Step of a greater narrative Trail. The elements of this model should be sufficiently decoupled as to allow remixing Entries and Collections into other narrative Trails.
+The goal is to permit a 'Memex-like' application where users 'bookmark' content in a local database which provides a searchable index and UI allowing Entries to be combined into Collections, which in turn can be referenced in each Step of a greater narrative Trail. The elements of this model should be sufficiently decoupled as to allow remixing Entries and Collections into other narrative Trails.
 The model makes use of 'meta-annotations' (annotations targeting annotations) to create the proposed structures.
 
 ## Example
