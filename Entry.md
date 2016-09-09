@@ -16,7 +16,7 @@ These are the basic units of a 'memex-like' application. They are records of ite
 - Choice
 
 ## Targets
-A Resource, [List, or Composite](https://www.w3.org/TR/annotation-model/#sets-of-bodies-and-targets) of 1 or more [Entries](Entry.md). 
+A single, [List, or Composite](https://www.w3.org/TR/annotation-model/#sets-of-bodies-and-targets) of 1 or more Resources. 
 
 ## Examples
 
