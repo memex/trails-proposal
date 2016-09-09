@@ -21,7 +21,7 @@ This example (JSON-LD below) defines:
 - Three [Entries](Entry.md) describing [fragments](https://www.w3.org/TR/annotation-model/#fragment-selector) of .mp4, .jpg, and .txt files.
 There are 12 [Entries](Entry.md) in total, but for the sake of keeping the JSON-LD examples concise only 3 are described. 
 
-## Layout
+## Presentation
 
 A client application would display these linked elements using whatever layout/navigation strategy it sees fit.
 One example of a layout strategy might be to show each Step in a Trail as a slide in a slide presentation. The contents of each slide would be dereferenced from the Collection specified in the Step's `body`. Collections serve as a means to show one or more Entries per narrative Step. Each Step targets 0 or more subsequent Steps. These might be used to provide navigation to the next slide, or slides in the case of a nonlinear/branching presentation.
