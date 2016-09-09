@@ -14,9 +14,10 @@ linking
 [Collection](Collection.md)
 
 ### Target
+- none
 - [Step](Step.md)
-- List of one or more [Steps](Step.md)
-- Composite of one or more [Steps](Step.md)
+- List of zero or more [Steps](Step.md)
+- Composite of zero or more [Steps](Step.md)
 
 ## Examples
 

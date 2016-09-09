@@ -12,15 +12,16 @@ The model makes use of 'meta-annotations' (annotations targeting annotations) to
 
 This example (JSON-LD below) defines: 
 
-- Three [Entry](Entry.md) objects describing [fragments](https://www.w3.org/TR/annotation-model/#fragment-selector) of .mp4, .jpg, and .txt files defined as annotations with the `describing` or `bookmarking` motivation. It is not required to use a fragment selector, the whole file could also be referenced, this example just shows that it is possible. There are 12 [Entries](Entry.md) in total, but for the sake of keeping the JSON-LD examples concise only 3 are described. 
+- Three [Entries](Entry.md) describing [fragments](https://www.w3.org/TR/annotation-model/#fragment-selector) of .mp4, .jpg, and .txt files.
+There are 12 [Entries](Entry.md) in total, but for the sake of keeping the JSON-LD examples concise only 3 are described. 
 
-- Four [Collections](Collection.md) defined as annotations with a `linking` motivation, each targeting a List (ordered) or Composite (unordered) of 1 or more [Entries](Entry.md).
+- Four [Collections](Collection.md)
 
-- One [Trail](Trail.md) defined as an annotation with a `linking` motivation, targeting a List of 1 or more [Steps](Step.md). 
+- One [Trail](Trail.md)
 
-- Four [Steps](Step.md) defined as annotations with a `linking` motivation, linking 1 [Collection](Collection.md) to 0 or more [Steps](Step.md).
+- Four [Steps](Step.md)
 
-Note that a `body` property is [not required by the Web Annotation Data Model](https://www.w3.org/TR/annotation-model/#cardinality-of-bodies-and-targets). Collections and Trails make use of this fact.
+## Layout
 
 An `mx` namespace is  included via the `@context` '`http://example.org/vocab/memex.jsonld`'. This provides an `mx:type` string which could be used to index memex records (Entries, Collections, Trails, Steps) by type.
 
