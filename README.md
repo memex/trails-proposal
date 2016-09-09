@@ -1,8 +1,8 @@
 
 # Introduction
 
-This is a proposal for a method to define linear and nonlinear narrative 'Trails' of content using the [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/).
-The goal is to permit a 'Memex-like' application where users 'bookmark' content in a local database which provides a searchable index and UI allowing Entries to be combined into Collections, which in turn can be referenced in each Step of a greater narrative Trail. The elements of this model should be sufficiently decoupled as to allow remixing Entries and Collections into other narrative Trails.
+This is a proposal for a method to define linear and nonlinear narrative 'trails' of content using the [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/).
+The goal is to permit a 'Memex-like' application where users 'bookmark' content in a local database which provides a searchable index and UI allowing [Entries](Entry.md) to be combined into [Collections](Collection.md), which in turn can be referenced in each [Step](Step.md) of a greater narrative [Trail](Trail.md). The elements of this model should be sufficiently decoupled as to allow remixing [Entries](Entry.md) and [Collections](Collection.md) into other narrative [Trails](Trail.md).
 The model makes use of 'meta-annotations' (annotations targeting annotations) to create the proposed structures.
 
 ## Example
@@ -12,13 +12,13 @@ The model makes use of 'meta-annotations' (annotations targeting annotations) to
 
 This example (JSON-LD below) defines: 
 
-- Three **Entry** objects describing [fragments](https://www.w3.org/TR/annotation-model/#fragment-selector) of .mp4, .jpg, and .txt files defined as annotations with the `describing` or `bookmarking` motivation. It is not required to use a fragment selector, the whole file could also be referenced, this example just shows that it is possible. There are 12 Entries in total, but for the sake of keeping the JSON-LD examples concise only 3 are described. 
+- Three [Entry](Entry.md) objects describing [fragments](https://www.w3.org/TR/annotation-model/#fragment-selector) of .mp4, .jpg, and .txt files defined as annotations with the `describing` or `bookmarking` motivation. It is not required to use a fragment selector, the whole file could also be referenced, this example just shows that it is possible. There are 12 [Entries](Entry.md) in total, but for the sake of keeping the JSON-LD examples concise only 3 are described. 
 
-- Four **Collections** defined as annotations with a `linking` motivation, each targeting a List (ordered) or Composite (unordered) of 1 or more **Entry** objects.
+- Four [Collections](Collection.md) defined as annotations with a `linking` motivation, each targeting a List (ordered) or Composite (unordered) of 1 or more [Entries](Entry.md).
 
-- One **Trail** defined as an annotation with a `linking` motivation, targeting a List of 1 or more **Steps**. 
+- One [Trail](Trail.md) defined as an annotation with a `linking` motivation, targeting a List of 1 or more [Steps](Step.md). 
 
-- Four **Steps** defined as annotations with a `linking` motivation, linking 1 **Collection** to 0 or more **Steps**.
+- Four [Steps](Step.md) defined as annotations with a `linking` motivation, linking 1 [Collection](Collection.md) to 0 or more [Steps](Step.md).
 
 Note that a `body` property is [not required by the Web Annotation Data Model](https://www.w3.org/TR/annotation-model/#cardinality-of-bodies-and-targets). Collections and Trails make use of this fact.
 
@@ -244,7 +244,7 @@ http://example.org/trail1
   "dc:title": "Trail 1",
   "dc:description": "I link the targeted steps to trail1",
   "target": {
-    "type": "List", // specific order
+    "type": "List", // use List for specific order, Composite for any order
     "items": [
       "http://example.org/step1",
       "http://example.org/step2",
