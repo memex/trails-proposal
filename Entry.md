@@ -1,7 +1,6 @@
 
 # Entry
 
-## Description
 Entries bookmark or describe a resource or [fragment](https://www.w3.org/TR/annotation-model/#fragment-selector) of a resource.
 
 These are the basic units of a 'memex-like' application. They are records of items of interest that a user may wish to assemble into a narrative [Trail](Trail.md).

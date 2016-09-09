@@ -1,7 +1,6 @@
 
 # Step
 
-## Description
 Steps describe individual parts of a [Trail](Trail.md), linking one [Collection](Collection.md) to zero or more Steps.
 
 Think of Steps as like slides in a Powerpoint presentation or segments of a video. Unlike a 'linear' presentation however, they can be followed by n Steps, allowing 'non linear' or 'branching' presentations. 
