@@ -28,7 +28,7 @@ none
   "dc:title": "Trail 1",
   "dc:description": "I link the targeted steps to trail1",
   "target": {
-    "type": "List", // use List for specific order, Composite for any order
+    "type": "List",
     "items": [
       "http://example.org/step1",
       "http://example.org/step2",
