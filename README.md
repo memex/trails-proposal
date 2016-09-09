@@ -23,8 +23,6 @@ There are 12 [Entries](Entry.md) in total, but for the sake of keeping the JSON-
 
 ## Layout
 
-An `mx` namespace is  included via the `@context` '`http://example.org/vocab/memex.jsonld`'. This provides an `mx:type` string which could be used to index memex records (Entries, Collections, Trails, Steps) by type.
-
 A client application would display these linked elements using whatever layout/navigation strategy it sees fit.
 One example of a layout strategy might be to show each Step in a Trail as a slide in a slide presentation. The contents of each slide would be dereferenced from the Collection specified in the Step's `body`. Collections serve as a means to show one or more Entries per narrative Step. Each Step targets 0 or more subsequent Steps. These might be used to provide navigation to the next slide, or slides in the case of a nonlinear/branching presentation.
 Collections and Steps can both make use of Lists or Composites to specify whether their respective targets should be displayed in a particular order.
@@ -33,6 +31,9 @@ Collections and Steps can both make use of Lists or Composites to specify whethe
 It is possible to store these JSON-LD annotations in IPFS/IPLD. To do so, the `id` property must be excluded as per [this discussion](https://github.com/ipfs/notes/issues/152#issuecomment-239153915).
 Content IRIs starting with `http://example.org/` can be replaced with a `fs:/ipfs/QmContent/` IRI, thus adhering to the Web Annotation Data Model.
 A consuming client application can interpret these IRIs as necessary. 
+
+## Custom Namespaces
+An `mx` namespace is  included via the `@context` '`http://example.org/vocab/memex.jsonld`'. This provides an `mx:type` string which could be used to index memex records (Entries, Collections, Trails, Steps) by type.
 
 ## Questions
 
