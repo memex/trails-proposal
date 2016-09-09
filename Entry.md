@@ -1,5 +1,5 @@
 
-# Collection
+# Entry
 
 ## Description
 Entries bookmark or describe a resource or [fragment](https://www.w3.org/TR/annotation-model/#fragment-selector) of a resource.
