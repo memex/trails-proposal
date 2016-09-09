@@ -13,7 +13,8 @@ linking
 none
 
 ## Targets
-A Resource, or [List](https://www.w3.org/TR/annotation-model/#sets-of-bodies-and-targets) of 1 or more [Steps](Step.md). 
+- [Step](Step.md)
+- List of one or more [Steps](Step.md)
 
 ## Examples
 

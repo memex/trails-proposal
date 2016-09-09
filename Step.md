@@ -15,7 +15,9 @@ linking
 [Collection](Collection.md) Resource
 
 ## Targets
-A Resource, [List, or Composite](https://www.w3.org/TR/annotation-model/#sets-of-bodies-and-targets) of 1 or more Steps. 
+- [Step](Step.md)
+- List of one or more [Steps](Step.md)
+- Composite of one or more [Steps](Step.md)
 
 ## Examples
 
