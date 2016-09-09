@@ -2,7 +2,7 @@
 # Step
 
 ## Description
-Steps describe individual parts of a [Trail](Trail.md), linking 1 [Collection](Collection.md) to 0 or more Steps.
+Steps describe individual parts of a [Trail](Trail.md), linking one [Collection](Collection.md) to zero or more Steps.
 
 Think of Steps as like slides in a Powerpoint presentation or segments of a video. Unlike a 'linear' presentation however, they can be followed by n Steps, allowing 'non linear' or 'branching' presentations. 
 
@@ -12,7 +12,7 @@ Subsequent Steps can be defined in ordered Lists or unordered Composites. This c
 linking
 
 ## Body
-[Collection](Collection.md) Resource
+[Collection](Collection.md)
 
 ## Target
 - [Step](Step.md)

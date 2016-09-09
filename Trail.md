@@ -2,7 +2,7 @@
 # Trail
 
 ## Description
-Trails act as containers for 1 or more [Steps](Step.md).
+Trails act as containers for one or more [Steps](Step.md).
 
 Think of a Trail as like a Powerpoint presentation file, or a video file. It contains a sequence of media that can be presented accordingly by a consuming application.
 

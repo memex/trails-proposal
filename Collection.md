@@ -2,7 +2,7 @@
 # Collection
 
 ## Description
-Collections act as containers for 1 or more [Entries](Entry.md).
+Collections act as containers for one or more [Entries](Entry.md).
 
 If [Steps](Step.md) are slides in a Powerpoint presentation, Collections are the 'canvas' onto which the individual pieces of content ([Entries](Entry.md)) are drawn.
 
