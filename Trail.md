@@ -12,7 +12,7 @@ linking
 ## Body
 none
 
-## Targets
+## Target
 - [Step](Step.md)
 - List of one or more [Steps](Step.md)
 

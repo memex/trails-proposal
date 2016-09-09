@@ -14,7 +14,7 @@ linking
 ## Body
 [Collection](Collection.md) Resource
 
-## Targets
+## Target
 - [Step](Step.md)
 - List of one or more [Steps](Step.md)
 - Composite of one or more [Steps](Step.md)

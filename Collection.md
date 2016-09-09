@@ -12,7 +12,7 @@ linking
 ## Body
 none
 
-## Targets
+## Target
 - [Entry](Entry.md)
 - List of one or more [Entries](Entry.md)
 - Composite of one or more [Entries](Entry.md)

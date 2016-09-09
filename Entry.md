@@ -15,7 +15,7 @@ These are the basic units of a 'memex-like' application. They are records of ite
 - Resource
 - Choice
 
-## Targets
+## Target
 - Resource
 - Composite of one or more Resources
 - List of one or more Resources
