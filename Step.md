@@ -7,13 +7,13 @@ Think of Steps as like slides in a Powerpoint presentation or segments of a vide
 
 Subsequent Steps can be defined in ordered Lists or unordered Composites. This could serve as a hint to a consuming application as to how to display these Steps.
 
-## Motivation 
+### Motivation 
 linking
 
-## Body
+### Body
 [Collection](Collection.md)
 
-## Target
+### Target
 - [Step](Step.md)
 - List of one or more [Steps](Step.md)
 - Composite of one or more [Steps](Step.md)

@@ -6,13 +6,13 @@ Trails act as containers for one or more [Steps](Step.md).
 Think of a Trail as like a Powerpoint or video file. It contains a sequence of media that can be presented accordingly by a consuming application.
 
 
-## Motivation 
+### Motivation 
 linking
 
-## Body
+### Body
 none
 
-## Target
+### Target
 - [Step](Step.md)
 - List of one or more [Steps](Step.md)
 

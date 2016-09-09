@@ -5,13 +5,13 @@ Collections act as containers for one or more [Entries](Entry.md).
 
 If [Steps](Step.md) are slides in a Powerpoint presentation, Collections are the 'canvas' onto which the individual pieces of content ([Entries](Entry.md)) are drawn.
 
-## Motivation 
+### Motivation 
 linking
 
-## Body
+### Body
 none
 
-## Target
+### Target
 - [Entry](Entry.md)
 - List of one or more [Entries](Entry.md)
 - Composite of one or more [Entries](Entry.md)
