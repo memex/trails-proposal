@@ -37,7 +37,7 @@ linking
 }
 ```
 
-### Multiple ordered targets (linear)
+### Multiple ordered targets (non linear)
 ```
 {
   "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
