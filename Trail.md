@@ -21,7 +21,7 @@ none
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "http://memex.global/trails/1",
+  "id": "http://memex.global/userid/trails/1",
   "type": "Annotation",
   "motivation": "linking",
   "dc:title": "Trail 1",
@@ -29,10 +29,10 @@ none
   "target": {
     "type": "List",
     "items": [
-      "http://memex.global/steps/1",
-      "http://memex.global/steps/2",
-      "http://memex.global/steps/3",
-      "http://memex.global/steps/4"
+      "http://memex.global/userid/steps/1",
+      "http://memex.global/userid/steps/2",
+      "http://memex.global/userid/steps/3",
+      "http://memex.global/userid/steps/4"
     ]
   }
 }

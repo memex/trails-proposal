@@ -26,13 +26,13 @@ linking
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "http://memex.global/steps/1",
+  "id": "http://memex.global/userid/steps/1",
   "type": "Annotation",
   "motivation": "linking",
   "dc:title": "Step 1",
   "dc:description": "I'm the first part of trail1 linking collection 1 to step 2",
-  "body": "http://memex.global/collections/1",
-  "target": "http://memex.global/steps/2" // linear
+  "body": "http://memex.global/userid/collections/1",
+  "target": "http://memex.global/userid/steps/2" // linear
 }
 ```
 
@@ -40,17 +40,17 @@ linking
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "http://memex.global/2",
+  "id": "http://memex.global/userid/steps/2",
   "type": "Annotation",
   "motivation": "linking",
   "dc:title": "Step 2",
   "dc:description": "I'm the second part of trail1 linking collection2 to step 3 and step 4",
-  "body": "http://memex.global/collections/2",
+  "body": "http://memex.global/userid/collections/2",
   "target": {
     "type": "List", // specific order
     "items": [
-      "http://memex.global/steps/3",
-      "http://memex.global/steps/4"
+      "http://memex.global/userid/steps/3",
+      "http://memex.global/userid/steps/4"
     ]
   }
 }
@@ -60,17 +60,17 @@ linking
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "http://memex.global/steps/2",
+  "id": "http://memex.global/userid/steps/2",
   "type": "Annotation",
   "motivation": "linking",
   "dc:title": "Step 2",
   "dc:description": "I'm the second part of trail1 linking collection2 to step 3 and step 4",
-  "body": "http://memex.global/collections/2",
+  "body": "http://memex.global/userid/collections/2",
   "target": {
     "type": "Composite", // no specific order
     "items": [
-      "http://memex.global/steps/3",
-      "http://memex.global/steps/4"
+      "http://memex.global/userid/steps/3",
+      "http://memex.global/userid/steps/4"
     ]
   }
 }
