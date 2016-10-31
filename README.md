@@ -28,9 +28,9 @@ One example of a layout strategy might be to show each Step in a Trail as a slid
 Collections and Steps can both make use of Lists or Composites to specify whether their respective targets should be displayed in a particular order.
 
 ## IPFS
-It is possible to store these JSON-LD annotations in IPFS/IPLD. To do so, the `id` property must be excluded as per [this discussion](https://github.com/ipfs/notes/issues/152#issuecomment-239153915).
-Content IRIs starting with `http://example.org/` can be replaced with a `fs:/ipfs/QmContent/` IRI, thus adhering to the Web Annotation Data Model.
-A consuming client application can interpret these IRIs as necessary. 
+It is possible to store these JSON-LD annotations in a peer-to-peer content-addressable network such as Mediachain or IPFS. To do so, the `id` property must be excluded as per [this discussion](https://github.com/ipfs/notes/issues/152#issuecomment-239153915).
+Content IRIs can take the form `fs:/mc/QmContent` ('mc' for the mediachain p2p network) or `fs:/ipfs/QmContent/` ('ipfs' for the ipfs p2p network).
+Once IPLD is implemented hashes will be equivalent for both networks.
 
 ## Questions
 
