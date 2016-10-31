@@ -25,34 +25,32 @@ linking
 
 ```
 {
-  "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
-  "id": "http://example.org/step1",
+  "@context": "http://www.w3.org/ns/anno.jsonld",
+  "id": "http://memex.global/steps/step1",
   "type": "Annotation",
-  "mx:type": "step",
   "motivation": "linking",
   "dc:title": "Step 1",
   "dc:description": "I'm the first part of trail1 linking collection 1 to step2",
-  "body": "http://example.org/collection1",
-  "target": "http://example.org/step2" // linear
+  "body": "http://memex.global/collections/collection1",
+  "target": "http://memex.global/steps/step2" // linear
 }
 ```
 
 ### Multiple ordered targets (non linear)
 ```
 {
-  "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
-  "id": "http://example.org/step2",
+  "@context": "http://www.w3.org/ns/anno.jsonld",
+  "id": "http://memex.global/step2",
   "type": "Annotation",
-  "mx:type": "step",
   "motivation": "linking",
   "dc:title": "Step 2",
   "dc:description": "I'm the second part of trail1 linking collection2 to step3 and step4",
-  "body": "http://example.org/collection2",
+  "body": "http://memex.global/collections/collection2",
   "target": {
     "type": "List", // specific order
     "items": [
-      "http://example.org/step3",
-      "http://example.org/step4"
+      "http://memex.global/steps/step3",
+      "http://memex.global/steps/step4"
     ]
   }
 }
@@ -61,19 +59,18 @@ linking
 ### Multiple unordered targets (non linear)
 ```
 {
-  "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
-  "id": "http://example.org/step2",
+  "@context": "http://www.w3.org/ns/anno.jsonld",
+  "id": "http://memex.global/steps/step2",
   "type": "Annotation",
-  "mx:type": "step",
   "motivation": "linking",
   "dc:title": "Step 2",
   "dc:description": "I'm the second part of trail1 linking collection2 to step3 and step4",
-  "body": "http://example.org/collection2",
+  "body": "http://memex.global/collections/collection2",
   "target": {
     "type": "Composite", // no specific order
     "items": [
-      "http://example.org/step3",
-      "http://example.org/step4"
+      "http://memex.global/steps/step3",
+      "http://memex.global/steps/step4"
     ]
   }
 }

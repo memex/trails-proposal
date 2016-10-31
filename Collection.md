@@ -22,14 +22,13 @@ none
 
 ```
 {
-  "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
-  "id": "http://example.org/collection1",
+  "@context": "http://www.w3.org/ns/anno.jsonld",
+  "id": "http://memex.global/collections/collection1",
   "type": "Annotation",
-  "mx:type": "collection",
   "motivation": "linking",
   "dc:title": "Collection 1",
   "dc:description": "I link the targeted entries to collection1",
-  "target": "http://example.org/entry1"
+  "target": "http://memex.global/entries/entry1"
 }
 ```
 
@@ -37,19 +36,18 @@ none
 
 ```
 {
-  "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
-  "id": "http://example.org/collection1",
+  "@context": "http://www.w3.org/ns/anno.jsonld",
+  "id": "http://memex.global/collections/collection1",
   "type": "Annotation",
-  "mx:type": "collection",
   "motivation": "linking",
   "dc:title": "Collection 1",
   "dc:description": "I link the targeted entries to collection1",
   "target": {
     "type": "List", // show the items in this order
     "items": [
-      "http://example.org/entry1",
-      "http://example.org/entry2",
-      "http://example.org/entry3"
+      "http://memex.global/entries/entry1",
+      "http://memex.global/entries/entry2",
+      "http://memex.global/entries/entry3"
     ]
   }
 }
@@ -59,19 +57,18 @@ none
 
 ```
 {
-  "@context": ["http://www.w3.org/ns/anno.jsonld", "http://example.org/vocab/memex.jsonld"],
-  "id": "http://example.org/collection2",
+  "@context": "http://www.w3.org/ns/anno.jsonld",
+  "id": "http://memex.global/collections/collection2",
   "type": "Annotation",
-  "mx:type": "collection",
   "motivation": "linking",
   "dc:title": "Collection 2",
   "dc:description": "I link the targeted entries to collection2",
   "target": {
     "type": "Composite", // show the items in any order
     "items": [
-      "http://example.org/entry4,
-      "http://example.org/entry5",
-      "http://example.org/entry6"
+      "http://memex.global/entries/entry4,
+      "http://memex.global/entries/entry5",
+      "http://memex.global/entries/entry6"
     ]
   }
 }
