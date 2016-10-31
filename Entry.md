@@ -25,10 +25,10 @@ These are the basic units of a 'memex-like' application. They are records of ite
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "http://memex.global/entries/entry1",
+  "id": "http://memex.global/entries/1",
   "type": "Annotation",
   "motivation": "bookmarking",
-  "target": "http://memex.global/content/movie.mp4#t=30,60"
+  "target": "fs:/mc/QMHash#t=30,60"
 }
 ```
 
@@ -37,11 +37,11 @@ These are the basic units of a 'memex-like' application. They are records of ite
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "http://memex.global/entries/entry1",
+  "id": "http://memex.global/entries/1",
   "type": "Annotation",
   "motivation": "describing",
-  "body": "http://memex.global/content/body1",
-  "target": "http://memex.global/content/movie.mp4#t=30,60"
+  "body": "fs:/mc/QMHash",
+  "target": "fs:/mc/QMHash#t=30,60"
 }
 ```
 
@@ -50,7 +50,7 @@ These are the basic units of a 'memex-like' application. They are records of ite
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "http://memex.global/entries/entry1",
+  "id": "http://memex.global/entries/1",
   "type": "Annotation",
   "motivation": "describing",
   "body": {
@@ -70,6 +70,6 @@ These are the basic units of a 'memex-like' application. They are records of ite
       }
     ]
   },
-  "target": "http://memex.global/content/movie.mp4#t=30,60"
+  "target": "fs:/mc/QMHash#t=30,60"
 }
 ```

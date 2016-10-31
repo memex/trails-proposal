@@ -23,12 +23,12 @@ none
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "http://memex.global/collections/collection1",
+  "id": "http://memex.global/collections/1",
   "type": "Annotation",
   "motivation": "linking",
   "dc:title": "Collection 1",
-  "dc:description": "I link the targeted entries to collection1",
-  "target": "http://memex.global/entries/entry1"
+  "dc:description": "I link the targeted entries to collection 1",
+  "target": "http://memex.global/entries/1"
 }
 ```
 
@@ -37,17 +37,17 @@ none
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "http://memex.global/collections/collection1",
+  "id": "http://memex.global/collections/1",
   "type": "Annotation",
   "motivation": "linking",
   "dc:title": "Collection 1",
-  "dc:description": "I link the targeted entries to collection1",
+  "dc:description": "I link the targeted entries to collection 1",
   "target": {
     "type": "List", // show the items in this order
     "items": [
-      "http://memex.global/entries/entry1",
-      "http://memex.global/entries/entry2",
-      "http://memex.global/entries/entry3"
+      "http://memex.global/entries/1",
+      "http://memex.global/entries/2",
+      "http://memex.global/entries/3"
     ]
   }
 }
@@ -58,17 +58,17 @@ none
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "http://memex.global/collections/collection2",
+  "id": "http://memex.global/collections/2",
   "type": "Annotation",
   "motivation": "linking",
   "dc:title": "Collection 2",
-  "dc:description": "I link the targeted entries to collection2",
+  "dc:description": "I link the targeted entries to collection 2",
   "target": {
     "type": "Composite", // show the items in any order
     "items": [
-      "http://memex.global/entries/entry4,
-      "http://memex.global/entries/entry5",
-      "http://memex.global/entries/entry6"
+      "http://memex.global/entries/4,
+      "http://memex.global/entries/5",
+      "http://memex.global/entries/6"
     ]
   }
 }

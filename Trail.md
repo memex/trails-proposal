@@ -21,18 +21,18 @@ none
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "http://memex.global/trails/trail1",
+  "id": "http://memex.global/trails/1",
   "type": "Annotation",
   "motivation": "linking",
   "dc:title": "Trail 1",
-  "dc:description": "I link the targeted steps to trail1",
+  "dc:description": "I link the targeted steps to trail 1",
   "target": {
     "type": "List",
     "items": [
-      "http://memex.global/steps/step1",
-      "http://memex.global/steps/step2",
-      "http://memex.global/steps/step3",
-      "http://memex.global/steps/step4"
+      "http://memex.global/steps/1",
+      "http://memex.global/steps/2",
+      "http://memex.global/steps/3",
+      "http://memex.global/steps/4"
     ]
   }
 }

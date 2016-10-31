@@ -26,13 +26,13 @@ linking
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "http://memex.global/steps/step1",
+  "id": "http://memex.global/steps/1",
   "type": "Annotation",
   "motivation": "linking",
   "dc:title": "Step 1",
-  "dc:description": "I'm the first part of trail1 linking collection 1 to step2",
-  "body": "http://memex.global/collections/collection1",
-  "target": "http://memex.global/steps/step2" // linear
+  "dc:description": "I'm the first part of trail1 linking collection 1 to step 2",
+  "body": "http://memex.global/collections/1",
+  "target": "http://memex.global/steps/2" // linear
 }
 ```
 
@@ -40,17 +40,17 @@ linking
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "http://memex.global/step2",
+  "id": "http://memex.global/2",
   "type": "Annotation",
   "motivation": "linking",
   "dc:title": "Step 2",
-  "dc:description": "I'm the second part of trail1 linking collection2 to step3 and step4",
-  "body": "http://memex.global/collections/collection2",
+  "dc:description": "I'm the second part of trail1 linking collection2 to step 3 and step 4",
+  "body": "http://memex.global/collections/2",
   "target": {
     "type": "List", // specific order
     "items": [
-      "http://memex.global/steps/step3",
-      "http://memex.global/steps/step4"
+      "http://memex.global/steps/3",
+      "http://memex.global/steps/4"
     ]
   }
 }
@@ -60,17 +60,17 @@ linking
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "http://memex.global/steps/step2",
+  "id": "http://memex.global/steps/2",
   "type": "Annotation",
   "motivation": "linking",
   "dc:title": "Step 2",
-  "dc:description": "I'm the second part of trail1 linking collection2 to step3 and step4",
-  "body": "http://memex.global/collections/collection2",
+  "dc:description": "I'm the second part of trail1 linking collection2 to step 3 and step 4",
+  "body": "http://memex.global/collections/2",
   "target": {
     "type": "Composite", // no specific order
     "items": [
-      "http://memex.global/steps/step3",
-      "http://memex.global/steps/step4"
+      "http://memex.global/steps/3",
+      "http://memex.global/steps/4"
     ]
   }
 }

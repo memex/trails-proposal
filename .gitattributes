@@ -1,0 +1,3 @@
+$ cat .gitattributes
+*.md linguist-language=Markdown
+**/*.md linguist-language=Markdown
