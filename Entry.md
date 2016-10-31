@@ -28,7 +28,7 @@ These are the basic units of a 'memex-like' application. They are records of ite
   "id": "http://memex.global/userid/entries/1",
   "type": "Annotation",
   "motivation": "bookmarking",
-  "target": "fs:/mc/QMHash#t=30,60" // fs:/mc (mediachain) and fs:/ipfs will eventually be interchangeable
+  "target": "fs:/mc/QmContent#t=30,60"
 }
 ```
 
@@ -41,7 +41,7 @@ These are the basic units of a 'memex-like' application. They are records of ite
   "type": "Annotation",
   "motivation": "describing",
   "body": "fs:/mc/QMHash",
-  "target": "fs:/mc/QMHash#t=30,60" // fs:/mc (mediachain) and fs:/ipfs will eventually be interchangeable
+  "target": "fs:/mc/QmContent#t=30,60"
 }
 ```
 
@@ -70,6 +70,6 @@ These are the basic units of a 'memex-like' application. They are records of ite
       }
     ]
   },
-  "target": "fs:/mc/QMHash#t=30,60" // fs:/mc (mediachain) and fs:/ipfs will eventually be interchangeable
+  "target": "fs:/mc/QmContent#t=30,60"
 }
 ```
