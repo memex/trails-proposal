@@ -40,7 +40,7 @@ These are the basic units of a 'memex-like' application. They are records of ite
   "id": "http://memex.global/userid/entries/1",
   "type": "Annotation",
   "motivation": "describing",
-  "body": "fs:/mc/QMHash",
+  "body": "fs:/mc/QmContent",
   "target": "fs:/mc/QmContent#t=30,60"
 }
 ```
