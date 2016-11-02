@@ -3,8 +3,11 @@
 
 Trails act as containers for one or more [Steps](Step.md).
 
-Think of a Trail as like a Powerpoint or video file. It contains a sequence of media that can be presented accordingly by a consuming application.
+Steps determine their linking order via the `target` property. However, it is useful to know which trail a specific Step belongs to.
 
+It is also necessary to know which Step is the first in any given Trail.
+
+A Trail's target is an ordered list of one or more Steps. The first Step represents the entry point for the Trail. The following Steps can be in any order - likely the order in which they were added to the Trail.
 
 ### Motivation 
 linking
