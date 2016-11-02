@@ -18,8 +18,7 @@ This example shows:
 
 - Four [Collections](Collection.md)
 
-- Three [Entries](Entry.md) describing [fragments](https://www.w3.org/TR/annotation-model/#fragment-selector) of .mp4, .jpg, and .txt files.
-There are 12 [Entries](Entry.md) in total, but for the sake of keeping the example concise only 3 are described. 
+- Twelve [Entries](Entry.md)
 
 ## Presentation
 
