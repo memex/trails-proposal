@@ -5,6 +5,8 @@ Entries bookmark or describe a resource or [fragment](https://www.w3.org/TR/anno
 
 These are the basic units of a 'memex-like' application. They are records of items of interest that a user may wish to assemble into a narrative [Trail](Trail.md).
 
+An Entry could target a whole file of any type, or select a fragment within it using a [fragment selector](https://www.w3.org/TR/annotation-model/#fragment-selector).
+
 Examples of selectors:
 
 - movie.mp4#t=30,60
