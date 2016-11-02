@@ -5,6 +5,12 @@ Entries bookmark or describe a resource or [fragment](https://www.w3.org/TR/anno
 
 These are the basic units of a 'memex-like' application. They are records of items of interest that a user may wish to assemble into a narrative [Trail](Trail.md).
 
+Examples of selectors:
+
+- movie.mp4#t=30,60
+- image.jpg#xywh=100,100,300,300
+- text.txt#char=0,100
+
 ### Motivation
 - bookmarking
 - describing
