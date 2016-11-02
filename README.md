@@ -36,4 +36,3 @@ Once IPLD is implemented hashes will be equivalent for both networks.
 
 - Would an `mx:layoutStrategy` property be useful to give consuming clients a hint as to how to best present a Trail?
 - What is the correct syntax for a `dc:description` with multiple languages?
-- When a `body` is not provided in the case of Trails and Collections, is it correct to say that the targeted annotations are _linked_ to the Trail/Collection?
