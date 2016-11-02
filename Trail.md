@@ -13,7 +13,7 @@ A Trail's target is an ordered list of one or more Steps. The first Step represe
 classifying
 
 ### Body
-//memex.global/classes/trail
+memex.global/classes/trail
 
 ### Target
 - [Step](Step.md)
@@ -24,19 +24,19 @@ classifying
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "//memex.global/users/userid/trails/1",
+  "id": "memex.global/users/userid/trails/1",
   "type": "Annotation",
   "motivation": "classifying",
-  "body": "//memex.global/classes/trail",
+  "body": "memex.global/classes/trail",
   "dc:title": "Trail 1",
   "dc:description": "I classify the targeted steps as part of trail 1",
   "target": {
     "type": "List",
     "items": [
-      "//memex.global/users/userid/steps/1",
-      "//memex.global/users/userid/steps/2",
-      "//memex.global/users/userid/steps/3",
-      "//memex.global/users/userid/steps/4"
+      "memex.global/users/userid/steps/1",
+      "memex.global/users/userid/steps/2",
+      "memex.global/users/userid/steps/3",
+      "memex.global/users/userid/steps/4"
     ]
   }
 }

@@ -33,7 +33,7 @@ Examples of selectors:
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "//memex.global/users/userid/entries/1",
+  "id": "memex.global/users/userid/entries/1",
   "type": "Annotation",
   "motivation": "bookmarking",
   "target": "fs:/mc/QmContent#t=30,60"
@@ -45,7 +45,7 @@ Examples of selectors:
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "//memex.global/users/userid/entries/1",
+  "id": "memex.global/users/userid/entries/1",
   "type": "Annotation",
   "motivation": "describing",
   "body": "fs:/mc/QmContent",
@@ -58,7 +58,7 @@ Examples of selectors:
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "//memex.global/users/userid/entries/1",
+  "id": "memex.global/users/userid/entries/1",
   "type": "Annotation",
   "motivation": "describing",
   "body": {

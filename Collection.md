@@ -9,7 +9,7 @@ If [Steps](Step.md) are like slides in a Powerpoint presentation, Collections ar
 classifying
 
 ### Body
-//memex.global/classes/collection
+memex.global/classes/collection
 
 ### Target
 - [Entry](Entry.md)
@@ -23,13 +23,13 @@ classifying
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "//memex.global/users/userid/collections/1",
+  "id": "memex.global/users/userid/collections/1",
   "type": "Annotation",
   "motivation": "classifying",
-  "body": "//memex.global/classes/collection",
+  "body": "memex.global/classes/collection",
   "dc:title": "Collection 1",
   "dc:description": "I link the targeted entries to collection 1",
-  "target": "//memex.global/users/userid/entries/1"
+  "target": "memex.global/users/userid/entries/1"
 }
 ```
 
@@ -38,18 +38,18 @@ classifying
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "//memex.global/users/userid/collections/1",
+  "id": "memex.global/users/userid/collections/1",
   "type": "Annotation",
   "motivation": "classifying",
-  "body": "//memex.global/classes/collection",
+  "body": "memex.global/classes/collection",
   "dc:title": "Collection 1",
   "dc:description": "I link the targeted entries to collection 1",
   "target": {
     "type": "List", // show the items in this order
     "items": [
-      "//memex.global/users/userid/entries/1",
-      "//memex.global/users/userid/entries/2",
-      "//memex.global/users/userid/entries/3"
+      "memex.global/users/userid/entries/1",
+      "memex.global/users/userid/entries/2",
+      "memex.global/users/userid/entries/3"
     ]
   }
 }
@@ -60,18 +60,18 @@ classifying
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "//memex.global/users/userid/collections/2",
+  "id": "memex.global/users/userid/collections/2",
   "type": "Annotation",
   "motivation": "classifying",
-  "body": "//memex.global/classes/collection",
+  "body": "memex.global/classes/collection",
   "dc:title": "Collection 2",
   "dc:description": "I link the targeted entries to collection 2",
   "target": {
     "type": "Composite", // show the items in any order
     "items": [
-      "//memex.global/users/userid/entries/4,
-      "//memex.global/users/userid/entries/5",
-      "//memex.global/users/userid/entries/6"
+      "memex.global/users/userid/entries/4,
+      "memex.global/users/userid/entries/5",
+      "memex.global/users/userid/entries/6"
     ]
   }
 }
