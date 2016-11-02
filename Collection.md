@@ -23,12 +23,12 @@ none
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "http://memex.global/userid/collections/1",
+  "id": "//memex.global/userid/collections/1",
   "type": "Annotation",
   "motivation": "linking",
   "dc:title": "Collection 1",
   "dc:description": "I link the targeted entries to collection 1",
-  "target": "http://memex.global/userid/entries/1"
+  "target": "//memex.global/userid/entries/1"
 }
 ```
 
@@ -37,7 +37,7 @@ none
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "http://memex.global/userid/collections/1",
+  "id": "//memex.global/userid/collections/1",
   "type": "Annotation",
   "motivation": "linking",
   "dc:title": "Collection 1",
@@ -45,9 +45,9 @@ none
   "target": {
     "type": "List", // show the items in this order
     "items": [
-      "http://memex.global/userid/entries/1",
-      "http://memex.global/userid/entries/2",
-      "http://memex.global/userid/entries/3"
+      "//memex.global/userid/entries/1",
+      "//memex.global/userid/entries/2",
+      "//memex.global/userid/entries/3"
     ]
   }
 }
@@ -58,7 +58,7 @@ none
 ```
 {
   "@context": "http://www.w3.org/ns/anno.jsonld",
-  "id": "http://memex.global/userid/collections/2",
+  "id": "//memex.global/userid/collections/2",
   "type": "Annotation",
   "motivation": "linking",
   "dc:title": "Collection 2",
@@ -66,9 +66,9 @@ none
   "target": {
     "type": "Composite", // show the items in any order
     "items": [
-      "http://memex.global/userid/entries/4,
-      "http://memex.global/userid/entries/5",
-      "http://memex.global/userid/entries/6"
+      "//memex.global/userid/entries/4,
+      "//memex.global/userid/entries/5",
+      "//memex.global/userid/entries/6"
     ]
   }
 }
