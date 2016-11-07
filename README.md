@@ -33,5 +33,5 @@ Once IPLD is implemented hashes will be equivalent for both networks.
 
 ## Questions
 
-- Would an `mx:layoutStrategy` property be useful to give consuming clients a hint as to how to best present a Trail?
+- Authors of Trails may wish to include a `viewingHint` property to give consuming clients a hint as to how to best present the content e.g. `"memex:viewingHint": "iiif"`.
 - What is the correct syntax for a `dc:description` with multiple languages?
