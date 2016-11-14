@@ -35,3 +35,6 @@ Once IPLD is implemented hashes will be equivalent for both networks.
 
 - Authors of Trails may wish to include a `viewingHint` property to give consuming clients a hint as to how to best present the content e.g. `"memex:viewingHint": "iiif"`.
 - What is the correct syntax for a `dc:description` with multiple languages?
+
+## Background and inspiration
+[Wikipedia](https://en.wikipedia.org/wiki/Memex): Memex is the name of the hypothetical proto-hypertext system that Vannevar Bush described in his 1945 The Atlantic Monthly article "[As We May Think](http://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/)". Bush describes the Memex as an electromechanical device enabling individuals to develop and read a large self-contained research library, create and follow associative trails of links and personal annotations, and recall these trails at any time to share them with other researchers. This device would closely mimic the associative processes of the human mind, but it would be gifted with permanent recollection.
