@@ -37,6 +37,9 @@ Once IPLD is implemented hashes will be equivalent for both networks.
 - What is the correct syntax for a `dc:description` with multiple languages?
 
 ## Background and inspiration
+
+"There is a new profession of trail blazers, those who find delight in the task of establishing useful trails through the enormous mass of the common record." -- Vannevar Bush (1945)
+
 [Wikipedia](https://en.wikipedia.org/wiki/Memex): "Memex is the name of the hypothetical proto-hypertext system that Vannevar Bush described in his 1945 The Atlantic Monthly article '[As We May Think](http://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/)'. Bush describes the Memex as an electromechanical device enabling individuals to develop and read a large self-contained research library, create and follow associative trails of links and personal annotations, and recall these trails at any time to share them with other researchers. This device would closely mimic the associative processes of the human mind, but it would be gifted with permanent recollection."
 
 Bush: "With one item in its grasp, [the human mind] snaps instantly to the next that is suggested by the association of thoughts, in accordance with some intricate web of trails carried by the cells of the brain. It has other characteristics, of course; trails that are not frequently followed are prone to fade, items are not fully permanent, memory is transitory. Yet the speed of action, the intricacy of trails, the detail of mental pictures, is awe-inspiring beyond all else in nature. Man cannot hope fully to duplicate this mental process artificially, but he certainly ought to be able to learn from it." (As We May Think, Section 6)
