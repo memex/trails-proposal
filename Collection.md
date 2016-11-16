@@ -28,7 +28,7 @@ memex.global/classes/collection
   "motivation": "classifying",
   "body": "memex.global/classes/collection",
   "dc:title": "Collection 1",
-  "dc:description": "I link the targeted entries to collection 1",
+  "dc:description": "I classify the targeted entries as collection 1",
   "target": "memex.global/users/userid/entries/1"
 }
 ```
@@ -43,7 +43,7 @@ memex.global/classes/collection
   "motivation": "classifying",
   "body": "memex.global/classes/collection",
   "dc:title": "Collection 1",
-  "dc:description": "I link the targeted entries to collection 1",
+  "dc:description": "I classify the targeted entries as collection 1",
   "target": {
     "type": "List", // show the items in this order
     "items": [
@@ -65,7 +65,7 @@ memex.global/classes/collection
   "motivation": "classifying",
   "body": "memex.global/classes/collection",
   "dc:title": "Collection 2",
-  "dc:description": "I link the targeted entries to collection 2",
+  "dc:description": "I classify the targeted entries as collection 2",
   "target": {
     "type": "Composite", // show the items in any order
     "items": [
