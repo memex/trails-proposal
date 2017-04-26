@@ -36,7 +36,7 @@ Examples of selectors:
   "id": "memex.global/users/userid/entries/1",
   "type": "Annotation",
   "motivation": "bookmarking",
-  "target": "fs:/ipfs/QmContent#t=30,60"
+  "target": "fs:/ipfs/<hash>#t=30,60"
 }
 ```
 
@@ -48,8 +48,8 @@ Examples of selectors:
   "id": "memex.global/users/userid/entries/1",
   "type": "Annotation",
   "motivation": "describing",
-  "body": "fs:/ipfs/QmContent",
-  "target": "fs:/ipfs/QmContent#t=30,60"
+  "body": "fs:/ipfs/<hash>",
+  "target": "fs:/ipfs/<hash>#t=30,60"
 }
 ```
 
@@ -78,6 +78,6 @@ Examples of selectors:
       }
     ]
   },
-  "target": "fs:/ipfs/QmContent#t=30,60"
+  "target": "fs:/ipfs/<hash>#t=30,60"
 }
 ```
